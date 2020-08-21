@@ -1,0 +1,26 @@
+### Test the stores
+### stores are the customers such as each golf course
+
+GET http://localhost:3001/stores
+
+### Test creating a store
+
+POST http://localhost:3001/stores
+Content-Type: application/json
+
+{
+    "Store Profile": "Nevada Golf Emprium",
+    "Shipping Info": "99 Nowhere Drive, Nevada"
+}
+
+### Test the PUT which should change a store
+
+PUT http://localhost:3001/stores/5f2caef3b78cd6525812e063
+Content-Type: application/json
+
+{
+    "Store Profile": "Nevada Golf Emporium"
+}
+
+### Test DELETE which should delete a store
+DELETE http://localhost:3001/stores/5f2caef3b78cd6525812e063
