@@ -10,13 +10,25 @@ We will configure the mongo db url on aws as well as in our local environment.
 
 Be able to do the following:
 
+### AWS
+
 - understand changes required for production deployment to aws
 
-- update your week 10 storefront api for deployment to aws
+- update your week-10 storefront api for deployment to aws
 
 - deploy your updated repository to aws
 
 - add your mongo db url as an environment variable on aws
+
+### Heroku
+
+- understand heroku deployment
+  
+- install the heroku cli
+  
+- login to heroku from the cli
+  
+- configure environment variables on heroku
 
 ## Overview
 
@@ -26,9 +38,9 @@ After an overview, you will make changes to your week 10 repository and deploy i
 
 You will commit your changes to your week 10 repository and create a new PR.
 
-## AWS Deployment
+## AWS and Heroku Deployment
 
-New this week is AWS deployment and the changes that were made to support the deployment process.
+New this week is AWS and Heroku deployment and the changes that were made to support the deployment process.
 
 Below we list out changes required from the original development-only version we previously built.
 
@@ -52,21 +64,9 @@ Below we list out changes required from the original development-only version we
 
 - Added configuration check for MONGO_URL environment variable and start DB only when configured.
 
-## Add Environment Variables on AWS for you environment "Configuration"
+### AWS and Heroku
 
-In the aws web console, navigate to beanstalk environments.
-
-- Click on your environment
-
-- Click "Configuration"
-
-- Under the "Category" column is a row with the value of "Software"
-
-- On the right side of that row is and "Edit" button. Click it to get to the "Modify Software" page.
-
-- On the "Modify Software" page, at the bottom is "Environment properties" where we will add our name/value pair.
-
-- We will use `MONGO_URL` as the name and we will add our mongo url as the value.
+See AWS.md and HEROKU.md
 
 ## Previously in the repo
 

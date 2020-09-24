@@ -34,14 +34,40 @@ Amazing!
 
 Push to the remote heroku
 
-`git push heroku main`
-
-Be sure there is a process on heroku setup to run your server
-
-`heroku ps:scale web=1`
+`git push heroku`
 
 Open the remotely hosted app in your browser.
 
 `heroku open`
 
-Amazing!
+Amazing! But we have one more command to run to configure the environment variable for MONGO.
+
+First confirm that the environment variable is not set:
+
+`heroku config:get MONGO_URL`
+
+Our mongo url which we have configured in the `.env` file will be the same url we use.
+
+To set the value on the server while keeping the setting private we will use the `heroku config` command.
+
+Note that the url value on the right side of this assignment must be enclosed in quotes.
+
+If you do not have access to your own mongo db url, for now you can use the shared mongo url that is included here for demonstration purposes only.
+
+`heroku config:set MONGO_URL='mongodb://mlab2020:abc123def!@ds031617.mlab.com:31617/learningmongo'`
+
+Heroku will restart your web server.
+
+In your browser, refresh the app web page or run the command to open the heroku-host web url for your rep.
+
+`heroku open`
+
+## Connect to Watch the Log file from the remote Heroku Server
+
+`heroku logs --tail`
+
+## In Case of Issues
+
+Be sure there is a process on heroku setup to run your server by running this command:
+
+`heroku ps:scale web=1`

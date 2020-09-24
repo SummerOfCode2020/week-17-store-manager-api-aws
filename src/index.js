@@ -9,9 +9,9 @@ const { request } = require('express');
 
 // support production deployment on a port configured on the hosting server 
 // default to the dev port number otherwise
-const port = process.env.PORT ? process.env.PORT : 3001;
-const MONGO_URL = process.env.MONGO_URL;
+const port = process.env.PORT || 3001;
 
+const MONGO_URL = process.env.MONGO_URL;
 
 // connect to our database then start the web server
 // https://www.mongodb.com/
