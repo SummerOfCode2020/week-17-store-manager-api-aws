@@ -4,9 +4,9 @@
 const {MongoClient} = require('mongodb');
 
 let database = null;
+const mongoDBURL = process.env.MONGO_URL;
 
 async function startDatabase() {
-  const mongoDBURL = `mongodb://mlab2020:abc123def!@ds031617.mlab.com:31617/learningmongo`;
   const connection = await MongoClient.connect(mongoDBURL, {useNewUrlParser: true});
   database = connection.db();
 }
