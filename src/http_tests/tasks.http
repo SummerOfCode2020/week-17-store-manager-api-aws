@@ -1,0 +1,28 @@
+### Test the tasks
+### Think of this table like a todo. 
+
+GET http://localhost:3001/api/tasks
+
+### Test creating a store
+
+POST http://localhost:3001/api/tasks
+Content-Type: application/json
+
+{
+    "title": "Test the GET api/tasks",
+    "complete": true,
+    "description": "Make a test for this in /src/http_tests/tasks.http" ,
+    "user" : "linarespachecoerick@gmail.com" 
+}
+
+### Test the PUT which should change a store
+
+PUT http://localhost:3001/api/tasks/62e6fdaee72f6e3cd4e42ede
+Content-Type: application/json
+
+{
+    "title": "Test GET api/tasks"
+}
+
+### Test DELETE which should delete a store
+DELETE http://localhost:3001/api/tasks/62e6fededd3e4e695ca9a806
