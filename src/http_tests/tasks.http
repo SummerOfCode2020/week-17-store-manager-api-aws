@@ -3,26 +3,24 @@
 
 GET http://localhost:3001/api/tasks
 
-### Test creating a store
+### Test creating a task
 
 POST http://localhost:3001/api/tasks
 Content-Type: application/json
 
 {
-    "title": "Test the GET api/tasks",
-    "complete": true,
-    "description": "Make a test for this in /src/http_tests/tasks.http" ,
+    "title": "Add updatedAt key to all previously created tasks, prior to {timeStamp} ",
     "user" : "linarespachecoerick@gmail.com" 
 }
 
-### Test the PUT which should change a store
+### Test the PUT which should change a task
 
-PUT http://localhost:3001/api/tasks/62e6fdaee72f6e3cd4e42ede
+PUT http://localhost:3001/api/tasks/62e701d74189af435068dae7
 Content-Type: application/json
 
 {
-    "title": "Test GET api/tasks"
+    "complete": true
 }
 
-### Test DELETE which should delete a store
+### Test DELETE which should delete a task
 DELETE http://localhost:3001/api/tasks/62e6fededd3e4e695ca9a806

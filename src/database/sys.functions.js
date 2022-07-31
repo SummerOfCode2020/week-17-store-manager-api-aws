@@ -1,15 +1,23 @@
-const { getDatabase } = require("./mongo-common");
+const { getDatabase, startDatabase } = require("./mongo-common");
 const { DB_TABLES } = require("./sys.info");
 
 // https://docs.mongodb.com/manual/reference/method/ObjectId/
 const { ObjectID } = require("mongodb");
 
-const getUserName = require("git-user-name");
+const getUserName = require("git-user-name")
 
+function getDate() {
+  return new Date().toLocaleString();
+}
 
 async function insertInto(table_name, value) {
   const database = await getDatabase();
+
+  // this is for development purpuses. If there is a addedBy = gitusername then this is dev.
   value.addedBy = getUserName();
+  value.addedAt = getDate();
+  value.updatedAt = null;
+
   // for `insertOne` info, see https://docs.mongodb.com/manual/reference/method/js-collection/
   const { insertedId } = await database
     .collection(table_name, value)
@@ -18,7 +26,6 @@ async function insertInto(table_name, value) {
 }
 
 async function selectFrom(table_name) {
-    
   const database = await getDatabase();
   // `find` https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find
   return await database.collection(table_name).find({}).toArray();
@@ -36,6 +43,10 @@ async function deleteFrom(table_name, id) {
 async function updateSet(table_name, id, new_value) {
   const database = await getDatabase();
 
+  // timestamp this event 
+  new_value.updatedAt = getDate()
+  
+
   // `delete` is new to you. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
   delete new_value._id;
 
@@ -52,8 +63,9 @@ async function updateSet(table_name, id, new_value) {
 
 // export the functions that can be used by the main app code
 module.exports = {
+  startDatabase,
   insertInto,
-  selectFrom, 
+  selectFrom,
   updateSet,
-  deleteFrom
+  deleteFrom,
 };
