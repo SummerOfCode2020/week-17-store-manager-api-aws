@@ -1,0 +1,26 @@
+### Test the tasks
+### Think of this table like a todo. 
+
+GET http://localhost:3001/api/tasks
+
+### Test creating a task
+
+POST http://localhost:3001/api/tasks
+Content-Type: application/json
+
+{
+    "title": "Add updatedAt key to all previously created tasks, prior to {timeStamp} ",
+    "user" : "linarespachecoerick@gmail.com" 
+}
+
+### Test the PUT which should change a task
+
+PUT http://localhost:3001/api/tasks/62e701d74189af435068dae7
+Content-Type: application/json
+
+{
+    "complete": true
+}
+
+### Test DELETE which should delete a task
+DELETE http://localhost:3001/api/tasks/62e6fededd3e4e695ca9a806
