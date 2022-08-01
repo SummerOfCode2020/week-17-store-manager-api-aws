@@ -1,5 +1,4 @@
 ### Test the home page endpoint
-
 GET http://localhost:3001
 
 ### Test a 404

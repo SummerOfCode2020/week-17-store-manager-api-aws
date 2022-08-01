@@ -1,6 +1,7 @@
 /**
   All configuration that is required for a shared mongo server hosted in the cloud
  */
+
 const { MongoClient } = require("mongodb");
 
 let database = null;

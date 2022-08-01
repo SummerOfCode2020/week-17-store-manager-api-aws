@@ -1,10 +1,9 @@
-const { getDatabase, startDatabase } = require("./mongo-common");
-const { DB_TABLES } = require("./sys.info");
+const { getDatabase, startDatabase } = require("./system.config");
 
 // https://docs.mongodb.com/manual/reference/method/ObjectId/
 const { ObjectID } = require("mongodb");
 
-const getUserName = require("git-user-name")
+const getUserName = require("git-user-name");
 
 function getDate() {
   return new Date().toLocaleString();
@@ -43,9 +42,8 @@ async function deleteFrom(table_name, id) {
 async function updateSet(table_name, id, new_value) {
   const database = await getDatabase();
 
-  // timestamp this event 
-  new_value.updatedAt = getDate()
-  
+  // timestamp this event
+  new_value.updatedAt = getDate();
 
   // `delete` is new to you. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
   delete new_value._id;
@@ -65,7 +63,7 @@ async function updateSet(table_name, id, new_value) {
 module.exports = {
   startDatabase,
   insertInto,
+  deleteFrom,
   selectFrom,
   updateSet,
-  deleteFrom,
 };

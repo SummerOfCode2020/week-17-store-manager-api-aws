@@ -9,17 +9,17 @@ POST http://localhost:3001/api/tasks
 Content-Type: application/json
 
 {
-    "title": "Add updatedAt key to all previously created tasks, prior to {timeStamp} ",
+    "title": "Frontend > Add ability to add tasks to the database from tasks component.",
     "user" : "linarespachecoerick@gmail.com" 
 }
 
 ### Test the PUT which should change a task
 
-PUT http://localhost:3001/api/tasks/62e701d74189af435068dae7
+PUT http://localhost:3001/api/tasks/62e6fd69e72f6e3cd4e42edd
 Content-Type: application/json
 
 {
-    "complete": true
+    "description": "nah wey"
 }
 
 ### Test DELETE which should delete a task
