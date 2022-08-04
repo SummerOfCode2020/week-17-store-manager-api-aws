@@ -6,7 +6,7 @@ const { MongoClient } = require("mongodb");
 
 let database = null;
 const mongoDBURL = process.env.MONGO_URL;
-const DB_NAME = process.env.MONGO_DB_NAME || "development";
+const DB_NAME = process.env.MONGO_DB_NAME || "test";
 
 async function startDatabase() {
   const connection = await MongoClient.connect(mongoDBURL, {
@@ -23,5 +23,4 @@ async function getDatabase() {
 
 module.exports = {
   getDatabase,
-  startDatabase,
 };
