@@ -1,20 +1,19 @@
-# Node.js and Express Tutorial: Building and RESTful APIs
+# Node.js and Express: 
+### Building and RESTful APIs
 
 ## Requirements
 
-Identify your mongo db url used previously. Ask JR for a shared mongo db url if needed.
+Identify your MONGO_URL url used previously. Go to the [MongoDB Website](https://www.mongodb.com/) to get a FREE shared mongo db if needed.
 
-We will configure the mongo db url on aws as well as in our local environment.
+We will configure the mongo db url on your preferred server environment (heroku vs aws) as well as in our local dev environment.
 
-## Objectives
+## Deployment
 
-Be able to do the following:
+See documentation at `./deployment-instructions`
 
 ### AWS
 
 - understand changes required for production deployment to aws
-
-- update your week-10 storefront api for deployment to aws
 
 - deploy your updated repository to aws
 

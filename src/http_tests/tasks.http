@@ -9,8 +9,11 @@ POST http://localhost:3001/api/tasks
 Content-Type: application/json
 
 {
-    "title": "Frontend > Add ability to add tasks to the database from tasks component.",
-    "user" : "linarespachecoerick@gmail.com" 
+
+ "playerName": "Daniel",
+ "playerLastName": "Pacheco",
+ "playerEmail":"danielpacheco3212011@gmail.com",
+ "playerPosition":"RB"       
 }
 
 ### Test the PUT which should change a task
