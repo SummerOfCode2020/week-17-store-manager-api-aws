@@ -9,17 +9,20 @@ POST http://localhost:3001/api/tasks
 Content-Type: application/json
 
 {
-    "title": "Add updatedAt key to all previously created tasks, prior to {timeStamp} ",
-    "user" : "linarespachecoerick@gmail.com" 
+
+ "playerName": "Daniel",
+ "playerLastName": "Pacheco",
+ "playerEmail":"danielpacheco3212011@gmail.com",
+ "playerPosition":"RB"       
 }
 
 ### Test the PUT which should change a task
 
-PUT http://localhost:3001/api/tasks/62e701d74189af435068dae7
+PUT http://localhost:3001/api/tasks/62e6fd69e72f6e3cd4e42edd
 Content-Type: application/json
 
 {
-    "complete": true
+    "description": "nah wey"
 }
 
 ### Test DELETE which should delete a task

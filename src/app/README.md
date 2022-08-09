@@ -1,10 +1,14 @@
 # IMPORTANT!!!!
 
-The app has been broken up into three sections. They might seem confusing at first, but you will get the hang of it.
+This folder is where the app gets mounted and configured with everything it needs. Remember, keep it simple and organized.
+
+<hr />
 
 ## Sections:
 
-`app.js` is where we initiate the app and then export it. Nothing more. Just the app. This was done so to separate the different parts of the application and to make development much more easy.
+### App
+
+File:./`app.js` is where we instanciate the app and then export it. Nothing more. Just the app. This approach aims separates the different parts of the application to make development and debuging much more easy.
 
 ```js
 const express = require("express");
@@ -15,11 +19,31 @@ const app = express();
 module.exports = app;
 ```
 
-## HOW TO ? ->
+## Middleware
 
-- To add a new middleware > Navigate to ``` ./src/app/app.middleware ```
-- To add a new route > Navigate to ``` ./src/app/app.routes.js ```
+`app.middleware.js` is where we import and apply all necessary middleware for this app. Only here.
 
+```js
+// app
+const app = require("./app");
 
+// deps
+const { json } = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
 
+// apply deps to app
+app.use(helmet());
+app.use(json());
+app.use(cors());
+app.use(morgan("combined"));
 
+// export app
+module.exports = app;
+```
+
+## Router
+
+File:./`app.routes.js` is where we manage the `/api/endpoints` of the application. This is the mapping for how the user will interact with the backend via HTTP methods such as GET, DELETE, PUT, and a few other more See [HTTP request methods
+by ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).

@@ -4,8 +4,8 @@ const {
   selectFrom,
   updateSet,
   deleteFrom,
-} = require("../database/sys.functions");
-const table_name = require("../database/sys.info").DB_TABLES.user_tasks;
+} = require("../database/system.functions");
+const table_name = require("../database/system.info").DB_TABLES.user_tasks;
 
 // select all tasks in database
 router.get("/", async (req, res) => {
