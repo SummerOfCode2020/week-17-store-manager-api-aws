@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2021 Erick Pacheco ([https://erick-pacheco.web.app/](https://erick-pacheco.web.app/))
+Copyright (c) 2022 Erick Pacheco ([https://erick-pacheco.web.app/](https://erick-pacheco.web.app/))
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

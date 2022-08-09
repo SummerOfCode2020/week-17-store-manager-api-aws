@@ -1,6 +1,6 @@
 # IMPORTANT!!!!
 
-This folder is where the app gets mounted and configured with everything it needs. This is not where everything is created. That is outsourced to a different folder. Remember, keep it simple and organized.
+This folder is where the app gets mounted and configured with everything it needs. Remember, keep it simple and organized.
 
 <hr />
 
@@ -8,7 +8,7 @@ This folder is where the app gets mounted and configured with everything it need
 
 ### App
 
-`app.js` is where we initiate the app and then export it. Nothing more. Just the app. This was done so to separate the different parts of the application and to make development much more easy.
+File:./`app.js` is where we instanciate the app and then export it. Nothing more. Just the app. This approach aims separates the different parts of the application to make development and debuging much more easy.
 
 ```js
 const express = require("express");
@@ -45,4 +45,5 @@ module.exports = app;
 
 ## Router
 
-`app.routes.js` This is where we manage the `/endpoints` of the application. This is the mapping for how the user will interact with the backend.
+File:./`app.routes.js` is where we manage the `/api/endpoints` of the application. This is the mapping for how the user will interact with the backend via HTTP methods such as GET, DELETE, PUT, and a few other more See [HTTP request methods
+by ](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods).

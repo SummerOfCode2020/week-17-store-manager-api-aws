@@ -1,8 +1,7 @@
-const { getDatabase, startDatabase } = require("./system.config");
+const { getDatabase } = require("./system.database");
 
 // https://docs.mongodb.com/manual/reference/method/ObjectId/
 const { ObjectID } = require("mongodb");
-
 const getUserName = require("git-user-name");
 
 function getDate() {

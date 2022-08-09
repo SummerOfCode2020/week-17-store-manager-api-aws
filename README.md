@@ -1,5 +1,6 @@
-# Node.js and Express: 
-### Building and RESTful APIs
+# Node.js and Express:
+
+### Building RESTful APIs
 
 ## Requirements
 
@@ -22,11 +23,8 @@ See documentation at `./deployment-instructions`
 ### Heroku
 
 - understand heroku deployment
-  
 - install the heroku cli
-  
 - login to heroku from the cli
-  
 - configure environment variables on heroku
 
 ## Overview
@@ -76,5 +74,4 @@ This app was configured originally only for development and required additional 
 Previous versions:
 
 - Week 10: <https://github.com/SummerOfCode2020/week-10-store-manager-api>
-  
 - Week 12: <https://github.com/SummerOfCode2020/week-12-store-manager-api>

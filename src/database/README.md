@@ -1,15 +1,15 @@
 # Database Management System
 
-Database Management Systems (DBMS) are used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the database.
+Database Management Systems (DBMS) are used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the cloud server.
 
 ### Approach
 
-Create global tools that mimick mssql database management system. We have created a folder structure similar to a sql database where we have a global `insertInto(table_name, value)` function, and same for the other crud operations.
+Create global tools that mimick mssql database management system. We have a folder structure similar to a sql database where we have a global set of key worded functions to do crud operations.
 
 <hr />
 
 ## Info 
-`system.info.js` has the information about the database. This information and more is accessible at home endpoint [http://localhost:3001/](http://localhost:3001/)
+File:./`system.info.js` has the information about the database. This information and more is accessible at home endpoint [http://localhost:3001/](http://localhost:3001/)
 
 
 ```js
@@ -27,34 +27,35 @@ module.exports = {
 
 ## Config
 
-`system.config.js` is where you will find all configuration that is required for a shared mongo server hosted in the cloud.
+File:./`system.config.js` is where you will find all configuration that is required for a shared mongo server hosted in the cloud.
 
 sniptit
 
 ```js
+/**
+All configuration that is required for a shared MongoDB server
+hosted in the cloud https://www.mongodb.com/
+*/
+
 const { MongoClient } = require("mongodb");
-
-let database = null;
 const mongoDBURL = process.env.MONGO_URL;
-const DB_NAME = process.env.MONGO_DB_NAME || "development";
 
-async function startDatabase() {
-  const connection = await MongoClient.connect(mongoDBURL, {
-    useNewUrlParser: true,
-    dbName: DB_NAME,
-  });
-  database = connection.db();
-}
+const mongoConfig = {
+	useNewUrlParser: true,
+	dbName: process.env.MONGO_DB_NAME || "test",
+};
 
 async function getDatabase() {
-  if (!database) await startDatabase();
-  return database;
+	let database;
+	const connection = await MongoClient.connect(mongoDBURL, mongoConfig);
+	database = connection.db();
+	return database;
 }
 
 module.exports = {
-  getDatabase,
-  startDatabase,
+	getDatabase,
 };
+
 ```
 
 ## Functions

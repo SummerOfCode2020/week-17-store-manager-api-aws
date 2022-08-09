@@ -1,6 +1,6 @@
 const routes = {
-    tasks: require('./tasks.routes'),
-    app: require('./app.routes')
-}
+	tasks: require("./tasks.routes"),
+	app: require("./app.routes"),
+};
 
-module.exports = routes
+module.exports = routes;
