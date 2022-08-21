@@ -5,6 +5,7 @@ const {
   updateSet,
   deleteFrom,
 } = require("../database/system.functions");
+
 const table_name = require("../database/system.info").DB_TABLES.user_tasks;
 
 // select all tasks in database
@@ -17,6 +18,7 @@ router.get("/", async (req, res) => {
 
 router.post("/", async (req, res) => {
   const newTask = req.body;
+  console.log(newTask)
   await insertInto(table_name, newTask).then(async () => {
     res.send({
       message: "Task was inserted into the database",

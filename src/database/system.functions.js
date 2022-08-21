@@ -20,6 +20,7 @@ async function insertInto(table_name, value) {
 	const { insertedId } = await database
 		.collection(table_name, value)
 		.insertOne(value);
+
 	return insertedId;
 }
 
