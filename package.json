@@ -8,7 +8,7 @@
 		"dev": "env-cmd nodemon ./src/index.js",
 		"test": "node ./src/index.js",
 		"zip-for-aws": "node ./src/utils/make-zip-for-aws.js",
-		"deploy": "git push heroku master"
+		"deploy": "git push origin master && git push heroku master"
 	},
 	"keywords": [
 		"Node",
