@@ -1,7 +1,7 @@
 ### Test the tasks
 ### Think of this table like a todo. 
 
-GET http://localhost:3001/api/tasks
+GET http://localhost:8080/api/tasks
 
 ### Test creating a task
 

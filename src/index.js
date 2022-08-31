@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const init = require("./server");
 const app = require("./app");
 
