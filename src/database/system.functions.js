@@ -24,10 +24,10 @@ async function insertInto(table_name, value) {
 	return insertedId;
 }
 
-async function selectFrom(table_name) {
+async function selectFrom(table_name, query) {
 	const database = await getDatabase();
 	// `find` https://docs.mongodb.com/manual/reference/method/db.collection.find/#db.collection.find
-	return await database.collection(table_name).find({}).toArray();
+	return await database.collection(table_name).find(query || {}).toArray();
 }
 
 async function deleteFrom(table_name, id) {

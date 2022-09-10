@@ -24,6 +24,7 @@
 	"license": "MIT",
 	"dependencies": {
 		"archiver": "^5.0.2",
+		"axios": "^0.27.2",
 		"body-parser": "^1.18.3",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.2",

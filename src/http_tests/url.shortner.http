@@ -1,0 +1,13 @@
+### get the urls that have been shortned 
+GET http://localhost:8080/api/urls
+
+### Submit a url to be shortned
+POST http://localhost:8080/api/urls
+Content-Type: application/json
+
+{
+ "long_url": "https://c.tenor.com/yvMdPappqVwAAAAM/hell-yeah-it-worked-derrick-boner.gif" 
+}
+
+### Delete a url to be shortned
+DELETE http://localhost:8080/api/urls/631cbeee72f5641fb8aef1e6
