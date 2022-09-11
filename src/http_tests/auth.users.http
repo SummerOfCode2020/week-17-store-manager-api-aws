@@ -1,0 +1,16 @@
+### Test regirstering an user with email, first and last name, and password
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "first_name": "Erick", 
+    "last_name": "Pacheco",
+    "email": "linarespachecoerick@gmail.com",
+    "password": "super strong password"
+}
+
+### Get all users in the database - probably should be admin role only
+GET http://localhost:8080/api/auth/users
+
+### Hard delete users from database - probably should be admin role only
+DELETE http://localhost:8080/api/auth/users/631d51bd6424303a2cbb7b04

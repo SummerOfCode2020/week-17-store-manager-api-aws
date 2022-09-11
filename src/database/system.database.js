@@ -7,6 +7,7 @@ const { MongoClient } = require("mongodb");
 const mongoDBURL = process.env.MONGO_URL;
 const mongoConfig = {
 	useNewUrlParser: true,
+	useUnifiedTopology: true
 };
 
 async function getDatabase() {

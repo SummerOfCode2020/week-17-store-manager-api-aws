@@ -5,5 +5,6 @@ const routes = require("../routes");
 app.use("/", routes.app);
 app.use("/api/tasks", routes.tasks);
 app.use("/api/urls", routes.urls);
+app.use("/api/auth", routes.auth);
 
 module.exports = app;
