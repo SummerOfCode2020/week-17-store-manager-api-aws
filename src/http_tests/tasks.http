@@ -2,6 +2,11 @@
 ### Think of this table like a todo. 
 
 GET http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vdGlmaWNhdGlvbnMuaGVscHJAZ21haWwuY29tIiwiaWF0IjoxNjYyODY4MjQ3LCJleHAiOjE2NjI4NzU0NDd9.Xg77qnTuHv9XP3qHp5fMfs9XShpygTgjTtJc5cdcg1M"
+}
 
 ### Test creating a task
 

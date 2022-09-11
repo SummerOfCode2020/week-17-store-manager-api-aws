@@ -6,7 +6,9 @@ const {
 	selectFrom,
 	insertInto,
 	deleteFrom,
+	updateSet,
 } = require("../database/system.functions");
+
 const table_name = require("../database/system.info").DB_TABLES.users;
 
 router.get("/users", async (req, res) => {
@@ -23,7 +25,10 @@ router.delete("/users/:_id", async (req, res) => {
 		});
 	});
 });
-router.post("/register", async (req, res) => {
+router.put("/users/update/:_id", async (req, res) => {
+	await updateSet(table_name, req.params._id, req.body);
+});
+router.post("/users/register", async (req, res) => {
 	// Our register logic starts here
 	try {
 		// Get user input
@@ -39,35 +44,40 @@ router.post("/register", async (req, res) => {
 		const oldUser = await selectFrom(table_name, { email });
 
 		if (oldUser.length >= 1) {
-			return res.status(409).send("User Already Exist. Please Login");
+			return res
+				.status(409)
+				.send({ message: "User Already Exist. Please Login", oldUser });
+		} else {
+			//Encrypt user password
+			encryptedPassword = await bcrypt.hash(password, 10);
+
+			// Create user in our database
+			const user = await selectFrom(table_name, {
+				_id: await insertInto(table_name, {
+					first_name,
+					last_name,
+					email: email.toLowerCase(), // sanitize: convert email to lowercase
+					password: encryptedPassword,
+				}),
+			});
+
+			// Create token
+			const token = jwt.sign(
+				{ user_id: user._id, email },
+				process.env.TOKEN_KEY,
+				{
+					expiresIn: "2h",
+				}
+			);
+
+			// return new user + token
+			res.status(201).json({ ...user, token });
 		}
-
-		//Encrypt user password
-		encryptedPassword = await bcrypt.hash(password, 10);
-
-		// Create user in our database
-		const user = await selectFrom(table_name, {
-			_id: await insertInto(table_name, {
-				first_name,
-				last_name,
-				email: email.toLowerCase(), // sanitize: convert email to lowercase
-				password: encryptedPassword,
-			}),
-		});
-
-		// Create token
-		const token = jwt.sign(
-			{ user_id: user._id, email },
-			process.env.TOKEN_KEY,
-			{
-				expiresIn: "2h",
-			}
-		);
-
-		// return new user + token
-		res.status(201).json({ ...user, token });
 	} catch (err) {
-		console.log(err);
+		res.status(409).send({
+			message: "An error occurred while processing your request",
+			payload: err,
+		});
 	}
 	// Our register logic ends here
 });

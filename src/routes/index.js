@@ -1,6 +1,9 @@
 const routes = {
 	app: require("./app.routes"),
-	auth: require("./auth.routes"),
+	auth: {
+		register: require("./auth.register.routes"),
+		login: require("./auth.login.routes"),
+	},
 	tasks: require("./tasks.routes"),
 	urls: require("./url.shortner.routes"),
 };

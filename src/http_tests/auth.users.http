@@ -1,16 +1,34 @@
 ### Test regirstering an user with email, first and last name, and password
-POST http://localhost:8080/api/auth/register
+POST http://localhost:8080/api/auth/users/register
 Content-Type: application/json
 
 {
     "first_name": "Erick", 
     "last_name": "Pacheco",
-    "email": "linarespachecoerick@gmail.com",
+    "email": "notifications.helpr@gmail.com",
     "password": "super strong password"
 }
+### Test to login an user with email and password
+POST http://localhost:8080/api/auth/users/login
+Content-Type: application/json
+
+{
+    "email": "notifications.helpr@gmail.com",
+    "password": "super strong password"
+}
+
+### Make route to update an user account
+PUT http://localhost:8080/api/auth/users/update
+Content-Type: application/json
+
+{
+    "first_name": "Erick", 
+    "email": "linarespachecoericdck@gmail.com"
+}
+
 
 ### Get all users in the database - probably should be admin role only
 GET http://localhost:8080/api/auth/users
 
 ### Hard delete users from database - probably should be admin role only
-DELETE http://localhost:8080/api/auth/users/631d51bd6424303a2cbb7b04
+DELETE http://localhost:8080/api/auth/users/631d57d81f3c4819405bc362
