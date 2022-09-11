@@ -1,13 +1,23 @@
 ### get the urls that have been shortned 
-GET http://localhost:8080/api/urls
-
-### Submit a url to be shortned
 POST http://localhost:8080/api/urls
 Content-Type: application/json
 
 {
- "long_url": "https://c.tenor.com/yvMdPappqVwAAAAM/hell-yeah-it-worked-derrick-boner.gif" 
+    "long_url": "https://mongodb.github.io/node-mongodb-native/4.9/"
+
 }
 
+### Submit a url to be shortned
+PUT http://localhost:8080/api/urls/631cc3085b7efe1794cc85c9
+Content-Type: application/json
+
+{
+ "author": "erick-pacheco" ,
+ "times_visited": 2
+}
+
+### test if the item exist in the database
+POST http://localhost:8080/api/urls/https://c.tenor.com/yvMdPappqVwAAAAM/hell-yeah-it-worked-derrick-boner.gif
+
 ### Delete a url to be shortned
-DELETE http://localhost:8080/api/urls/631cbeee72f5641fb8aef1e6
+DELETE http://localhost:8080/api/urls/631d28799c27fc46e0abba40
