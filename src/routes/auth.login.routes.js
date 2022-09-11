@@ -1,5 +1,6 @@
 const router = require("express").Router();
-
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const {
 	selectFrom,
 	insertInto,
@@ -21,7 +22,7 @@ router.post("/users/login", async (req, res) => {
 		}
 		// Validate if user exist in our database
 		const user = await selectFrom(table_name, { email }).then(
-			(response) => response[0]
+			(arrayOfUsers) => arrayOfUsers[0]
 		);
 
 		if (user && (await bcrypt.compare(password, user.password))) {
@@ -30,19 +31,21 @@ router.post("/users/login", async (req, res) => {
 				{ user_id: user._id, email },
 				process.env.TOKEN_KEY,
 				{
-					expiresIn: "2h",
+					expiresIn: "20s",
 				}
 			);
 
+			// save user token
+			user.token = token;
+			// remove password before sending it to the client
+			delete user.password;
+            
 			// user
-			res.status(200).json({ ...user, token });
+			res.status(200).json(user);
 		}
-		res.status(401).send("Invalid Credentials");
+		res.status(400).send("Invalid Credentials");
 	} catch (err) {
-		res.status(400).send({
-			message: "An error occurred while processing your request",
-			payload: err,
-		});
+		console.log(err);
 	}
 	// Our register logic ends here
 });

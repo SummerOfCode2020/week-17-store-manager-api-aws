@@ -5,16 +5,18 @@ Content-Type: application/json
 {
     "first_name": "Erick", 
     "last_name": "Pacheco",
-    "email": "notifications.helpr@gmail.com",
-    "password": "super strong password"
+    "email": "notifications.helpr+1@gmail.com",
+    "password": "mypassword"
 }
 ### Test to login an user with email and password
 POST http://localhost:8080/api/auth/users/login
 Content-Type: application/json
 
 {
-    "email": "notifications.helpr@gmail.com",
-    "password": "super strong password"
+   
+    "email": "notifications.helpr+1@gmail.com",
+    "password": "mypassword"
+    
 }
 
 ### Make route to update an user account

@@ -41,12 +41,14 @@ router.post("/users/register", async (req, res) => {
 
 		// check if user already exist
 		// Validate if user exist in our database
-		const oldUser = await selectFrom(table_name, { email });
+		const oldUser = await selectFrom(table_name, { email }).then(
+			(arrayOfUsers) => arrayOfUsers[0]
+		);
 
-		if (oldUser.length >= 1) {
+		if (oldUser) {
 			return res
 				.status(409)
-				.send({ message: "User Already Exist. Please Login", oldUser });
+				.send({ message: "User Already Exist. Please Login" });
 		} else {
 			//Encrypt user password
 			encryptedPassword = await bcrypt.hash(password, 10);
@@ -69,6 +71,8 @@ router.post("/users/register", async (req, res) => {
 					expiresIn: "2h",
 				}
 			);
+
+			delete user.password;
 
 			// return new user + token
 			res.status(201).json({ ...user, token });
