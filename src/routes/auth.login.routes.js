@@ -31,7 +31,7 @@ router.post("/users/login", async (req, res) => {
 				{ user_id: user._id, email },
 				process.env.TOKEN_KEY,
 				{
-					expiresIn: "20s",
+					expiresIn: "2h",
 				}
 			);
 
@@ -39,7 +39,7 @@ router.post("/users/login", async (req, res) => {
 			user.token = token;
 			// remove password before sending it to the client
 			delete user.password;
-            
+
 			// user
 			res.status(200).json(user);
 		}
