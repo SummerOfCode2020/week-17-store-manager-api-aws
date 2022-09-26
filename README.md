@@ -13,6 +13,10 @@ We will configure the mongo db url on your preferred server environment (heroku 
 - [User Acceptance Test](https://cherry-q.herokuapp.com/)
 - [Production]()
 
+### Env. Variables List
+- MONGO_URL=
+- MONGO_DB_NAME=
+- TOKEN_KEY=
 
 ## Deployment
 See documentation at `./deployment-instructions`
