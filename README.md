@@ -10,7 +10,7 @@ We will configure the mongo db url on your preferred server environment (heroku 
 
 ## Environments
 - [Development](http://localhost:8080/)
-- [User Acceptance Test](https://cherry-q.herokuapp.com/)
+- [User Acceptance Test](https://espresso-api-service.herokuapp.com/)
 - [Production]()
 
 ### Env. Variables List
