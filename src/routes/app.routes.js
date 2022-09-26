@@ -8,7 +8,7 @@ const appInfo = {
   },
 };
 
-router.get("/", (req, res) => {
+router.get("/", (_, res) => {
   res.send(appInfo);
 });
 
