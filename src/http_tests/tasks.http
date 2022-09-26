@@ -5,7 +5,7 @@ GET http://localhost:8080/api/tasks
 Content-Type: application/json
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5vdGlmaWNhdGlvbnMuaGVscHJAZ21haWwuY29tIiwiaWF0IjoxNjYyODY4MjQ3LCJleHAiOjE2NjI4NzU0NDd9.Xg77qnTuHv9XP3qHp5fMfs9XShpygTgjTtJc5cdcg1M"
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMzMTA4NzBlNzBhZmYyNmMwZjcyZmM3IiwiZW1haWwiOiJub3RpZmljYXRpb25zLmhlbHByKzJAZ21haWwuY29tIiwiaWF0IjoxNjY0MTU3OTE3LCJleHAiOjE2NjQxNjUxMTd9.Vh23lEQW2sdA5o-Tb8mRPobrTHc_OZwYGj6FmGkZfTs"
 }
 
 ### Test creating a task

@@ -5,7 +5,7 @@ Content-Type: application/json
 {
     "first_name": "Erick", 
     "last_name": "Pacheco",
-    "email": "notifications.helpr+1@gmail.com",
+    "email": "notifications.helpr+2@gmail.com",
     "password": "mypassword"
 }
 ### Test to login an user with email and password
@@ -14,7 +14,7 @@ Content-Type: application/json
 
 {
    
-    "email": "notifications.helpr+1@gmail.com",
+    "email": "notifications.helpr+2@gmail.com",
     "password": "mypassword"
     
 }
