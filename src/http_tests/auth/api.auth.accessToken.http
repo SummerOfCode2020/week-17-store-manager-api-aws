@@ -1,0 +1,7 @@
+### Login providing an access token
+POST http://localhost:8080/api/auth/access-token
+Content-Type: application/json
+
+{
+   "access_token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMzMTA4NzBlNzBhZmYyNmMwZjcyZmM3IiwiZW1haWwiOiJub3RpZmljYXRpb25zLmhlbHByKzJAZ21haWwuY29tIiwiaWF0IjoxNjY0MTk3MzEyLCJleHAiOjE2NjQyMDQ1MTJ9.fh7XRSLjxPBqkkku8cHtr34x4vlXWIHYwEHvNOQvVZ"    
+}

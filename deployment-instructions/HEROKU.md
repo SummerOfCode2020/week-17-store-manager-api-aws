@@ -1,5 +1,13 @@
-# Deploy to Heroku
+# Deployoment to Heroku - not recommended
 
+> Starting October 26, 2022, we will begin deleting inactive accounts and associated storage for accounts that have been inactive for over a year. Starting November 28, 2022, we plan to stop offering free product plans and plan to start shutting down free dynos and data services.Sep 13, 2022. [Read More](https://bit.ly/3fpI2r9) 
+
+### Alernatives to Heroku free tier
+See article https://blog.back4app.com/top-10-heroku-alternatives/
+
+<br />
+
+## Pre-requisite
 Be sure you have the `heroku` cli installed.
 
 - Mac `brew tap heroku/brew && brew install heroku`

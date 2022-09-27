@@ -10,7 +10,7 @@ const {
 
 const table_name = require("../database/system.info").DB_TABLES.users;
 
-router.post("/users/login", async (req, res) => {
+router.post("/", async (req, res) => {
 	// Our login logic starts here
 	try {
 		// Get user input

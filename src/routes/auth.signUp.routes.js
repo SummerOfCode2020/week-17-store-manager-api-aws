@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const Utils = require("../utils");
 
 const {
 	selectFrom,
@@ -11,12 +12,13 @@ const {
 
 const table_name = require("../database/system.info").DB_TABLES.users;
 
-router.get("/users", async (req, res) => {
+router.get("/", async (req, res) => {
 	res.send({
 		message: "Everyone in users table",
 		payload: await selectFrom(table_name),
 	});
 });
+
 router.delete("/users/:_id", async (req, res) => {
 	await deleteFrom(table_name, req.params._id).then(async () => {
 		res.send({
@@ -25,10 +27,12 @@ router.delete("/users/:_id", async (req, res) => {
 		});
 	});
 });
+
 router.put("/users/update/:_id", async (req, res) => {
 	await updateSet(table_name, req.params._id, req.body);
 });
-router.post("/users/register", async (req, res) => {
+
+router.post("/", async (req, res) => {
 	// Our register logic starts here
 	try {
 		// Get user input
@@ -56,7 +60,10 @@ router.post("/users/register", async (req, res) => {
 			// Create user in our database
 			const user = await selectFrom(table_name, {
 				_id: await insertInto(table_name, {
+					uuid: Utils.generateGUID(),
 					first_name,
+					from: "fuse-app",
+					role: process.env.PORT === 8080 ? "admin" : "guest",
 					last_name,
 					email: email.toLowerCase(), // sanitize: convert email to lowercase
 					password: encryptedPassword,

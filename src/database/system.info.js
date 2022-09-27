@@ -9,4 +9,5 @@ const DB_NAME = process.env.MONGO_DB_NAME;
 module.exports = {
 	DB_NAME,
 	DB_TABLES,
+	tables: DB_TABLES
 };
