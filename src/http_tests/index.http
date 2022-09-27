@@ -1,6 +1,5 @@
 ### Test the home page endpoint
-
-GET http://localhost:3001
+GET http://localhost:8080/api/tasks
 
 ### Test a 404
-GET http://localhost:3001/testing-404
+GET http://localhost:8080/testing-404

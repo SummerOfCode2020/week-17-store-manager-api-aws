@@ -1,30 +1,46 @@
 {
-  "name": "week-10",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./src/index.js",
-  "scripts": {
-    "start": "node ./src/index.js",
-    "dev": "env-cmd nodemon ./src/index.js",
-    "test": "node ./src/index.js",
-    "zip-for-aws": "node make-zip-for-aws.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "archiver": "^5.0.2",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
-    "env-cmd": "^10.1.0",
-    "express": "^4.16.4",
-    "git-user-name": "^2.0.0",
-    "helmet": "^3.15.1",
-    "mongodb": "^3.1.13",
-    "morgan": "^1.9.1",
-    "zip-a-folder": "0.0.12"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+	"name": "week-19-node-restful-api",
+	"version": "1.0.0",
+	"description": "",
+	"main": "./src/index.js",
+	"scripts": {
+		"start": "node ./src/index.js",
+		"dev": "env-cmd nodemon ./src/index.js",
+		"test": "node ./src/index.js",
+		"zip-for-aws": "node ./src/utils/make-zip-for-aws.js",
+		"deploy": "git push origin master && git push heroku master"
+	},
+	"keywords": [
+		"Node",
+		"API",
+		"RestFul",
+		"AWS",
+		"Heroku",
+		"Express",
+		"Database",
+		"MongoDB"
+	],
+	"author": "john-rice, erick-pacheco",
+	"license": "MIT",
+	"dependencies": {
+		"archiver": "^5.0.2",
+		"axios": "^0.27.2",
+		"bcrypt": "^5.0.1",
+		"body-parser": "^1.18.3",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.2",
+		"env-cmd": "^10.1.0",
+		"express": "^4.16.4",
+		"express-jwt": "^7.7.5",
+		"git-user-name": "^2.0.0",
+		"helmet": "^3.15.1",
+		"jsonwebtoken": "^8.5.1",
+		"jwks-rsa": "^2.1.4",
+		"mongodb": "^3.1.13",
+		"morgan": "^1.9.1",
+		"zip-a-folder": "0.0.12"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
 }

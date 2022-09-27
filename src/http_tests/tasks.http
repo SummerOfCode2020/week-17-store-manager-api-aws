@@ -1,0 +1,34 @@
+### Test the tasks
+### Think of this table like a todo. 
+
+GET http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMzMTA4NzBlNzBhZmYyNmMwZjcyZmM3IiwiZW1haWwiOiJub3RpZmljYXRpb25zLmhlbHByKzJAZ21haWwuY29tIiwiaWF0IjoxNjY0MTU3OTE3LCJleHAiOjE2NjQxNjUxMTd9.Vh23lEQW2sdA5o-Tb8mRPobrTHc_OZwYGj6FmGkZfTs"
+}
+
+### Test creating a task
+
+POST http://localhost:3001/api/tasks
+Content-Type: application/json
+
+{
+
+ "playerName": "Daniel",
+ "playerLastName": "Pacheco",
+ "playerEmail":"danielpacheco3212011@gmail.com",
+ "playerPosition":"RB"       
+}
+
+### Test the PUT which should change a task
+
+PUT http://localhost:3001/api/tasks/62e6fd69e72f6e3cd4e42edd
+Content-Type: application/json
+
+{
+    "description": "nah wey"
+}
+
+### Test DELETE which should delete a task
+DELETE http://localhost:3001/api/tasks/62e6fededd3e4e695ca9a806
