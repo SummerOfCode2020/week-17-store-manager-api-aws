@@ -16,7 +16,7 @@ Be sure you have the `heroku` cli installed.
 
 ## Heroku Login
 
-`heroku login` is required to authenticate your machine to connect to your heroku account.
+`heroku login` is required to authenticate your machine to connect to your heroku account, and you will be required to opt-in to 2FA.
 
 ## Heroku Commands
 
