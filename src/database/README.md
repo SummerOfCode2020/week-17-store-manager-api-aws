@@ -69,3 +69,8 @@ selectFrom(table_name);
 updateSet(table_name, id, new_value);
 deleteFrom(table_name, id);
 ```
+## Foreign Keys Handling
+Requirenments
+
+- At a global level, the user is a foreign key.
+- Each table will automatically enter metadata suchs createdBy, createdDate, updatedAt, updatedBy, and more
