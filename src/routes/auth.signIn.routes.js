@@ -1,14 +1,9 @@
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {
-	selectFrom,
-	insertInto,
-	deleteFrom,
-	updateSet,
-} = require("../database/system.functions");
+const { selectFrom } = require("../database/system.functions");
 
-const table_name = require("../database/system.info").DB_TABLES.users;
+const table_name = "users";
 
 router.post("/", async (req, res) => {
 	// Our login logic starts here

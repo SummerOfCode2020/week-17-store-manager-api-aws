@@ -10,7 +10,7 @@ const {
 	updateSet,
 } = require("../database/system.functions");
 
-const table_name = require("../database/system.info").DB_TABLES.users;
+const table_name = 'users'
 
 router.get("/", async (req, res) => {
 	res.send({
