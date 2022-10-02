@@ -4,10 +4,10 @@ const DB_TABLES = {
 	users: "users",
 };
 
-const DB_NAME = process.env.MONGO_DB_NAME;
+const DB_NAME = process.env.MONGO_DB_NAME || "DEV_DB";
 
 module.exports = {
 	DB_NAME,
 	DB_TABLES,
-	tables: DB_TABLES
+	tables: DB_TABLES,
 };

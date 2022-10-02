@@ -65,7 +65,7 @@ module.exports = {
 ```js
 // Functions & Params
 insertInto(table_name, value);
-selectFrom(table_name);
+selectFrom(table_name, {query});
 updateSet(table_name, id, new_value);
 deleteFrom(table_name, id);
 ```
